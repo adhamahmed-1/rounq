@@ -463,14 +463,228 @@
     50% { transform: translateX(-50%) translateY(8px); }
   }
 
-  @media (max-width: 600px) {
+  /* ========== MOBILE RESPONSIVE ========== */
+  @media (max-width: 768px) {
+    /* Hide custom cursor on mobile */
+    .cursor { display: none; }
+    
+    /* Page dots - move to bottom on small screens */
+    .page-dots {
+      position: fixed;
+      left: 50%;
+      top: auto;
+      bottom: 20px;
+      transform: translateX(-50%);
+      flex-direction: row;
+      gap: 8px;
+      z-index: 100;
+    }
+
+    /* Page section adjustments */
+    .page { padding: 30px 16px; }
+
+    /* Title adjustments */
+    .section-title { font-size: 1.6rem; margin-bottom: 24px; }
+
+    /* Envelope adjustments */
+    .envelope { width: 240px; height: 165px; }
+    .env-flap { 
+      border-left-width: 120px;
+      border-right-width: 120px;
+      border-top-width: 85px;
+    }
+    .env-heart { font-size: 2.2rem; }
+    .env-letter { font-size: 0.95rem; padding: 12px 10px; }
+    .tap-hint { font-size: 0.9rem; margin-top: 16px; }
+    .next-btn { 
+      margin-top: 20px;
+      padding: 12px 32px;
+      font-size: 1rem;
+    }
+
+    /* Reasons grid - stack better on mobile */
+    .reasons-grid {
+      grid-template-columns: 1fr;
+      gap: 14px;
+      max-width: 100%;
+    }
+    .reason-card {
+      padding: 18px 16px;
+      border-radius: 16px;
+    }
+    .reason-icon { font-size: 1.8rem; }
+    .reason-text { font-size: 0.95rem; }
+
+    /* Timeline adjustments for mobile */
     .timeline::before { right: 16px; }
-    .tl-item { padding-right: 50px; justify-content: flex-start; }
-    .tl-item:nth-child(even) { padding-left: 50px; padding-right: 0; }
+    .tl-item { 
+      padding-right: 50px;
+      justify-content: flex-start;
+      margin-bottom: 24px;
+      padding-left: 0;
+    }
+    .tl-item:nth-child(even) { 
+      padding-left: 50px;
+      padding-right: 0;
+      justify-content: flex-start;
+    }
     .tl-dot { right: 6px; }
     .tl-item:nth-child(even) .tl-dot { right: 6px; }
-    .envelope { width: 240px; height: 165px; }
-    .env-flap { border-left-width: 120px; border-right-width: 120px; }
+    .tl-card { 
+      max-width: 180px;
+      padding: 12px 14px;
+      border-radius: 12px;
+    }
+    .tl-emoji { font-size: 1.5rem; }
+    .tl-title { font-size: 0.9rem; }
+    .tl-desc { font-size: 0.8rem; }
+
+    /* Heart button adjustments */
+    .big-heart-btn { 
+      width: 120px;
+      height: 120px;
+      font-size: 5rem;
+      margin: 16px 0;
+    }
+    .love-counter { font-size: 1rem; }
+    .love-messages { 
+      font-size: 1rem;
+      max-width: 100%;
+      padding: 0 16px;
+    }
+
+    /* Final message adjustments */
+    .final-title { 
+      font-size: 2rem;
+      margin-bottom: 12px;
+    }
+    .final-subtitle { 
+      font-size: 1.1rem;
+      margin-bottom: 24px;
+      max-width: 90%;
+      padding: 0 12px;
+    }
+    .signature { font-size: 1rem; }
+
+    /* Scroll arrow */
+    .scroll-arrow { 
+      font-size: 1.4rem;
+      bottom: 16px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    /* Extra small devices */
+    .page { padding: 20px 12px; }
+
+    /* Title adjustments */
+    .section-title { font-size: 1.4rem; margin-bottom: 18px; }
+
+    /* Envelope */
+    .envelope { width: 200px; height: 140px; }
+    .env-flap { 
+      border-left-width: 100px;
+      border-right-width: 100px;
+      border-top-width: 70px;
+    }
+    .env-heart { font-size: 1.8rem; }
+    .env-letter { font-size: 0.85rem; }
+    .tap-hint { font-size: 0.8rem; }
+    .next-btn { 
+      margin-top: 16px;
+      padding: 10px 24px;
+      font-size: 0.9rem;
+    }
+
+    /* Reasons */
+    .reasons-grid { gap: 10px; }
+    .reason-card {
+      padding: 14px 12px;
+      border-radius: 12px;
+    }
+    .reason-icon { font-size: 1.6rem; margin-bottom: 6px; }
+    .reason-text { font-size: 0.85rem; line-height: 1.6; }
+
+    /* Timeline */
+    .tl-item { 
+      margin-bottom: 18px;
+      padding-right: 40px;
+    }
+    .tl-item:nth-child(even) { padding-left: 40px; }
+    .tl-card { 
+      max-width: 160px;
+      padding: 10px 10px;
+      border-radius: 10px;
+    }
+    .tl-emoji { font-size: 1.3rem; margin-bottom: 4px; }
+    .tl-title { font-size: 0.8rem; }
+    .tl-desc { font-size: 0.7rem; }
+
+    /* Heart */
+    .big-heart-btn { 
+      width: 100px;
+      height: 100px;
+      font-size: 4rem;
+      margin: 12px 0;
+    }
+    .love-counter { font-size: 0.9rem; margin: 6px 0 12px; }
+    .love-messages { 
+      font-size: 0.9rem;
+      min-height: 35px;
+    }
+
+    /* Final message */
+    .final-title { 
+      font-size: 1.6rem;
+      margin-bottom: 10px;
+    }
+    .final-subtitle { 
+      font-size: 0.95rem;
+      margin-bottom: 16px;
+      line-height: 1.8;
+      padding: 0 8px;
+    }
+    .signature { 
+      font-size: 0.9rem;
+      letter-spacing: 1px;
+    }
+
+    /* Scroll arrow */
+    .scroll-arrow { 
+      font-size: 1.2rem;
+      bottom: 12px;
+    }
+  }
+
+  @media (max-width: 360px) {
+    /* Very small devices */
+    .page { padding: 16px 10px; }
+
+    .section-title { font-size: 1.2rem; margin-bottom: 14px; }
+
+    .envelope { width: 180px; height: 125px; }
+    .env-flap { 
+      border-left-width: 90px;
+      border-right-width: 90px;
+      border-top-width: 60px;
+    }
+
+    .big-heart-btn { 
+      width: 90px;
+      height: 90px;
+      font-size: 3.5rem;
+    }
+
+    .final-title { font-size: 1.4rem; }
+    .final-subtitle { font-size: 0.85rem; }
+  }
+
+  /* Touch-friendly adjustments */
+  @media (hover: none) and (pointer: coarse) {
+    button, .dot, .envelope-wrap {
+      min-height: 44px;
+      min-width: 44px;
+    }
   }
 </style>
 </head>
@@ -609,17 +823,24 @@
 </section>
 
 <script>
+  // ===== MOBILE DETECTION =====
+  const isMobile = window.innerWidth <= 768;
+  const isSmallMobile = window.innerWidth <= 480;
+
   // ===== CURSOR =====
   const cursor = document.getElementById('cursor');
-  document.addEventListener('mousemove', e => {
-    cursor.style.left = e.clientX - 9 + 'px';
-    cursor.style.top = e.clientY - 9 + 'px';
-  });
+  if (!isMobile) {
+    document.addEventListener('mousemove', e => {
+      cursor.style.left = e.clientX - 9 + 'px';
+      cursor.style.top = e.clientY - 9 + 'px';
+    });
+  }
 
   // ===== FLOATING PETALS =====
   const petalsContainer = document.getElementById('petals');
   const petalEmojis = ['🌸', '🌹', '💕', '🌺', '✨', '💗'];
-  for (let i = 0; i < 18; i++) {
+  const petalCount = isSmallMobile ? 8 : isMobile ? 12 : 18;
+  for (let i = 0; i < petalCount; i++) {
     const p = document.createElement('div');
     p.className = 'petal';
     p.textContent = petalEmojis[Math.floor(Math.random() * petalEmojis.length)];
@@ -632,7 +853,8 @@
 
   // ===== STARS (PAGE 5) =====
   const starsContainer = document.getElementById('starsContainer');
-  for (let i = 0; i < 60; i++) {
+  const starCount = isSmallMobile ? 30 : isMobile ? 40 : 60;
+  for (let i = 0; i < starCount; i++) {
     const s = document.createElement('div');
     s.className = 'star';
     const size = Math.random() * 3 + 1;
@@ -642,7 +864,8 @@
 
   // ===== HEARTS RAIN (PAGE 5) =====
   const heartsRain = document.getElementById('heartsRain');
-  for (let i = 0; i < 22; i++) {
+  const heartCount = isSmallMobile ? 10 : isMobile ? 15 : 22;
+  for (let i = 0; i < heartCount; i++) {
     const h = document.createElement('div');
     h.className = 'raining-heart';
     h.textContent = ['❤️','💕','💗','💖','💝'][Math.floor(Math.random()*5)];
@@ -665,6 +888,12 @@
     }, 600);
   }
 
+  // Allow touch to open envelope on mobile
+  if (isMobile) {
+    const envelope = document.getElementById('envelope');
+    envelope.addEventListener('touchstart', openEnvelope);
+  }
+
   // ===== NAVIGATION =====
   const pages = document.querySelectorAll('.page');
   const dots = document.querySelectorAll('.dot');
@@ -685,23 +914,25 @@
         if (idx === 2) animateTimeline();
       }
     });
-  }, { threshold: 0.5 });
+  }, { threshold: isMobile ? 0.3 : 0.5 });
 
   pages.forEach(p => pageObserver.observe(p));
 
   // ===== REASONS ANIMATION =====
   function animateReasons() {
     const cards = document.querySelectorAll('.reason-card');
+    const delay = isSmallMobile ? 80 : 120;
     cards.forEach((card, i) => {
-      setTimeout(() => card.classList.add('visible'), i * 120);
+      setTimeout(() => card.classList.add('visible'), i * delay);
     });
   }
 
   // ===== TIMELINE ANIMATION =====
   function animateTimeline() {
     const items = document.querySelectorAll('.tl-item');
+    const delay = isSmallMobile ? 120 : 180;
     items.forEach((item, i) => {
-      setTimeout(() => item.classList.add('visible'), i * 180);
+      setTimeout(() => item.classList.add('visible'), i * delay);
     });
   }
 
@@ -721,13 +952,14 @@
     msg.textContent = loveTexts[(clickCount - 1) % loveTexts.length];
     msg.classList.add('show');
 
-    // Sparkles
+    // Sparkles - fewer on mobile
     const container = document.getElementById('sparklesContainer');
     const rect = document.getElementById('heartBtn').getBoundingClientRect();
     const cx = rect.left + rect.width/2;
     const cy = rect.top + rect.height/2;
     const sparks = ['✨','💕','🌸','💖','⭐','🌹'];
-    for (let i = 0; i < 8; i++) {
+    const sparkCount = isSmallMobile ? 4 : 8;
+    for (let i = 0; i < sparkCount; i++) {
       const sp = document.createElement('div');
       sp.className = 'sparkle';
       sp.textContent = sparks[Math.floor(Math.random() * sparks.length)];
@@ -737,6 +969,12 @@
       setTimeout(() => sp.remove(), 900);
     }
   }
+
+  // Handle window resize
+  window.addEventListener('resize', () => {
+    const newIsMobile = window.innerWidth <= 768;
+    if (newIsMobile !== isMobile) location.reload();
+  });
 </script>
 </body>
 </html>
